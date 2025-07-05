@@ -1,0 +1,10 @@
+#include <stdio.h>
+void dfs(int g[10][10], int v[10], int u, int n) {
+    printf("%d ",u); v[u]=1;
+    for(int i=0;i<n;i++)
+        if(g[u][i] && !v[i]) dfs(g,v,i,n);
+}
+int main() {
+    int g[4][4]={{0,1,1,0},{1,0,0,1},{1,0,0,1},{0,1,1,0}}, v[10]={0};
+    dfs(g,v,0,4);
+}
